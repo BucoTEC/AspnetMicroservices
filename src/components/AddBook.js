@@ -1,23 +1,32 @@
 import React, { useState } from 'react'
-import {getAuthors} from '../queries/queries'
+import {getAuthors, addBookMutation} from '../queries/queries'
 import {
-    useQuery
+    useQuery,
+    useMutation
 } from "@apollo/client";
 
 
 
 export default function AddBook() {
     const { loading, error, data } = useQuery(getAuthors);
+    const [addBook, {lodaing : bookLoading, error : bookError, data: bookData}] = useMutation(addBookMutation);
     const [name, setName]=useState('')
     const [genre, setGenre]=useState('')
     const [authorId, setAuthorId]=useState('')
-            console.log(authorId);
+
+   
     const formHandler = (e)=>{
         e.preventDefault()
+        addBook({variables:{name, genre, authorId}})
     }
-
+    // bookError && console.log(JSON.stringify(bookError, null, 2));; GOOD FOR ERROR HANDLING
   return (
-    <form id="add-book" onSubmit={formHandler} >
+      <>
+        {bookLoading && <h1>loading</h1>}
+        {bookError && <h1>{bookError.message}</h1>}
+        {bookData && <h1>Success</h1>}
+
+      <form id="add-book" onSubmit={formHandler} >
     <div className="field">
         <label>Book name:</label>
         <input type="text" onChange={e => setName(e.target.value)} />
@@ -38,5 +47,6 @@ export default function AddBook() {
     </div>
     <button>+</button>
 </form>
+      </>
   )
 }
