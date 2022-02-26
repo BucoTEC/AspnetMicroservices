@@ -5,6 +5,7 @@ import {
     useQuery,
     gql
 } from "@apollo/client";
+import AddBook from './AddBook';
 
 const getBooksQuery = gql`
     {
@@ -27,7 +28,7 @@ function BookList() {
             {data && data.books.map((book)=> (<li key={book.id}>{book.name}</li>))}
 
         </ul>
-        
+        <AddBook/>
     </div>
   )
 }
