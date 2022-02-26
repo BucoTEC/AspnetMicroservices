@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {getAuthors, addBookMutation} from '../queries/queries'
+import {getAuthors, addBookMutation, getBooksQuery} from '../queries/queries'
 import {
     useQuery,
     useMutation
@@ -9,7 +9,9 @@ import {
 
 export default function AddBook() {
     const { loading, error, data } = useQuery(getAuthors);
-    const [addBook, {lodaing : bookLoading, error : bookError, data: bookData}] = useMutation(addBookMutation);
+    const [addBook, {erro : bookError}] = useMutation(addBookMutation , {
+        refetchQueries: [{ query: getBooksQuery }],
+      });
     const [name, setName]=useState('')
     const [genre, setGenre]=useState('')
     const [authorId, setAuthorId]=useState('')
@@ -19,12 +21,11 @@ export default function AddBook() {
         e.preventDefault()
         addBook({variables:{name, genre, authorId}})
     }
-    // bookError && console.log(JSON.stringify(bookError, null, 2));; GOOD FOR ERROR HANDLING
+    //GREAT ERROR HANDLING TRICK
+    bookError && console.log(JSON.stringify(bookError, null, 2));; 
   return (
       <>
-        {bookLoading && <h1>loading</h1>}
-        {bookError && <h1>{bookError.message}</h1>}
-        {bookData && <h1>Success</h1>}
+        
 
       <form id="add-book" onSubmit={formHandler} >
     <div className="field">
