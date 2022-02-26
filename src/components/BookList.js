@@ -4,7 +4,6 @@ import {getBooksQuery} from '../queries/queries'
 import {
     useQuery
 } from "@apollo/client";
-import AddBook from './AddBook';
 
 
 
@@ -22,7 +21,6 @@ function BookList({onSelect}) {
             {data && data.books.map((book)=> (<li key={book.id}  onClick={e => selectHandler(book.id)} >{book.name}</li>))}
 
         </ul>
-        <AddBook/>
     </div>
   )
 }

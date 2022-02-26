@@ -11,7 +11,13 @@ export default function BookDetails({bookId}) {
 
             {oneBook.loading && <div>Loading ...</div>}
             {oneBook.error && <div>Ups there was a probem</div>}
-            {oneBook?.data && <div>{oneBook?.data?.book?.name}</div>}
+            {oneBook?.data?.book && <div>
+                
+                <h1>{oneBook?.data?.book?.name}</h1>
+                <p>{oneBook?.data?.book?.genre}</p>
+                <p>Author: {oneBook?.data?.book?.author?.name}</p>
+
+                </div>}
             
     
 
