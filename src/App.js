@@ -4,6 +4,8 @@ import {
   InMemoryCache,
   ApolloProvider,
 } from "@apollo/client";
+import BookDetails from "./components/BookDetails";
+import { useState } from "react";
 
 const client = new ApolloClient({
   uri: 'http://localhost:5000/graphql',
@@ -13,11 +15,16 @@ const client = new ApolloClient({
 
 
 function App() {
+  const [id, setId] = useState(null);
+  const selectHandler  = (e)=>{
+  setId(e)
+  }
   return (
     <ApolloProvider client={client}>
 
     <div >
-      <BookList/>
+      <BookList onSelect={ e => selectHandler(e)}/>
+      <BookDetails bookId = {id}/>
     </div>
     </ApolloProvider>
   );
