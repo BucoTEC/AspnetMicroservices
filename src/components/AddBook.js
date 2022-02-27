@@ -42,7 +42,7 @@ export default function AddBook() {
     <div className="field">
         <label>Author:</label>
         <select onChange={e=> setAuthorId(e.target.value)} value={authorId} required>
-            <option>Select author</option>
+            <option></option>
             { loading && <option>Loading ...</option> }
             { error && <option>Ups there was a problem</option> }
             { data &&  data.authors.map(author => <option key={author.id} value={author.id}>{author.name}</option> )  }
