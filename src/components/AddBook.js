@@ -20,6 +20,9 @@ export default function AddBook() {
     const formHandler = (e)=>{
         e.preventDefault()
         addBook({variables:{name, genre, authorId}})
+        setAuthorId('')
+        setName('')
+        setGenre('')
     }
     //GREAT ERROR HANDLING TRICK
     bookError && console.log(JSON.stringify(bookError, null, 2));; 
@@ -30,15 +33,15 @@ export default function AddBook() {
       <form id="add-book" onSubmit={formHandler} >
     <div className="field">
         <label>Book name:</label>
-        <input type="text" onChange={e => setName(e.target.value)} />
+        <input type="text" onChange={e => setName(e.target.value)} value={name} required/>
     </div>
     <div className="field">
         <label>Genre:</label>
-        <input type="text" onChange={e => setGenre(e.target.value)} />
+        <input type="text" onChange={e => setGenre(e.target.value)} value={genre} required/>
     </div>
     <div className="field">
         <label>Author:</label>
-        <select onChange={e=> setAuthorId(e.target.value)}>
+        <select onChange={e=> setAuthorId(e.target.value)} value={authorId} required>
             <option>Select author</option>
             { loading && <option>Loading ...</option> }
             { error && <option>Ups there was a problem</option> }
