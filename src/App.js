@@ -6,7 +6,7 @@ import {
 } from "@apollo/client";
 import AddBook from './components/AddBook'
 const client = new ApolloClient({
-  uri: 'http://localhost:5000/graphql',
+  uri: 'https://btech-solutions-graphql-api.herokuapp.com/graphql',
   cache: new InMemoryCache()
 });
 
