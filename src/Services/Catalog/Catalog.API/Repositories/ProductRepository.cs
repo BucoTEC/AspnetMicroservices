@@ -8,7 +8,7 @@ using MongoDB.Driver;
 
 namespace Catalog.API.Repositories
 {
-    public class ProductRepository
+    public class ProductRepository : IProductRepository
     {
         private readonly ICatalogContext _context;
 
