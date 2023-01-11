@@ -12,3 +12,5 @@ namespace Catalog.API.Data
         IMongoCollection<Product> Products { get; }
     }
 }
+
+// TODO look in to basic mongo operation in c#
