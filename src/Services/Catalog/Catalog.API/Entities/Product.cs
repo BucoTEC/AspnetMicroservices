@@ -22,3 +22,5 @@ namespace Catalog.API.Entities
         public decimal Price { get; set; }
     }
 }
+
+// TODO look into entities related to the data structures entered in mongo

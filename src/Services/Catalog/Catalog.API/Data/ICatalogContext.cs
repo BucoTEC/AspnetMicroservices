@@ -11,6 +11,7 @@ namespace Catalog.API.Data
     {
         IMongoCollection<Product> Products { get; }
     }
+    // Check if there are sets needed
 }
 
 // TODO look in to basic mongo operation in c#
