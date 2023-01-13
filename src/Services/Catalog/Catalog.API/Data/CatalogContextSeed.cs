@@ -17,7 +17,7 @@ namespace Catalog.API.Data
                 productCollection.InsertManyAsync(GetPreconfiguredProducts());
             }
         }
-
+        // seeder research
         private static IEnumerable<Product> GetPreconfiguredProducts()
         {
             return new List<Product>()
