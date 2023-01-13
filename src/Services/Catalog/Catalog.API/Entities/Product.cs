@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
+// bson element
 namespace Catalog.API.Entities
 {
     public class Product
