@@ -18,6 +18,7 @@ namespace Catalog.API.Controllers
 
         public CatalogController(IProductRepository repository, ILogger<CatalogController> logger)
         {
+            // repository check
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
