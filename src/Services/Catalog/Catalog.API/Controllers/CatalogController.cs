@@ -30,6 +30,7 @@ namespace Catalog.API.Controllers
             return Ok(products);
         }
 
+        // basic setup of id req
         [HttpGet("{id:length(24)}", Name = "GetProduct")]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
