@@ -14,11 +14,11 @@ namespace Catalog.API.Data
             bool existProduct = productCollection.Find(p => true).Any();
             if (!existProduct)
             {
-                productCollection.InsertManyAsync(GetPreconfiguredProducts());
+                productCollection.InsertManyAsync(GetPrefiguredProducts());
             }
         }
         // seeder research
-        private static IEnumerable<Product> GetPreconfiguredProducts()
+        private static IEnumerable<Product> GetPrefiguredProducts()
         {
             return new List<Product>()
             {
