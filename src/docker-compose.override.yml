@@ -9,6 +9,13 @@ services:
     volumes:
       - mongo_data:/data/db
 
+  mongoClient:
+    container_name: mongoClient
+    depends_on:
+      - catalogdb
+    ports:
+      - "3000:3000"
+
   catalog.api:
     container_name: catalog.api
     environment:
