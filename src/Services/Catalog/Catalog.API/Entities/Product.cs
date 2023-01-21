@@ -24,4 +24,3 @@ namespace Catalog.API.Entities
     }
 }
 
-// TODO look into entities related to the data structures entered in mongo
