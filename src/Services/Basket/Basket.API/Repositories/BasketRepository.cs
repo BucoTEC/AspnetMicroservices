@@ -25,12 +25,11 @@ namespace Basket.API.Repositories
         {
             var basket = await _redis.GetStringAsync(userName);
 
-            if (String.IsNullOrEmpty(basket))
+            if (basket != null)
             {
-                throw new Exception("No cart found");
+                return JsonConvert.DeserializeObject<ShoppingCart>(basket);
             }
-
-            return JsonConvert.DeserializeObject<ShoppingCart>(basket) ?? throw new Exception("Serialization failed"); ;
+            return new ShoppingCart(userName);
         }
 
         public async Task<ShoppingCart> UpdateBasket(ShoppingCart basket)
