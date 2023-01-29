@@ -11,10 +11,10 @@ namespace Basket.API.Entities
 
         public string UserName { get; set; } = null!;
 
-        public List<ShoppingCartItem> Items { get; set; } = new List<ShoppingCartItems>();
-        public ShoppingCart(string UserName)
+        public List<ShoppingCartItem> Items { get; set; } = new List<ShoppingCartItem>();
+        public ShoppingCart(string userName)
         {
-            UserName = UserName;
+            UserName = userName;
         }
 
         public decimal TotalPrice

@@ -7,7 +7,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddStackExchange(options => options.Configuration = Configuration.GetValue<string>("CacheString:ConnectionString"));
+builder.Services.AddStackExchangeRedisCache(options => options.Configuration = builder.Configuration.GetValue<string>("CacheString:ConnectionString"));
 
 var app = builder.Build();
 
