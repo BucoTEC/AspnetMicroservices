@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Basket.API.Controllers
 {
-    // check redis packages
     [ApiController]
     [Route("api/[controller]")]
     public class BasketController : ControllerBase
