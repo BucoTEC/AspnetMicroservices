@@ -11,7 +11,7 @@ namespace Catalog.API.Data
     {
         IMongoCollection<Product> Products { get; }
     }
-    // Check if there are sets needed
+    // used for db sets
 }
 
 
