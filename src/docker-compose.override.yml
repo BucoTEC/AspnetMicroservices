@@ -27,6 +27,17 @@ services:
     volumes:
       - postgres_data:/data/db
 
+  pgadmin:
+    container_name: pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@mail.com
+      - PGADMIN_DEFAULT_PASSWORD=admin1234
+    restart: always
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/root/.pgadmin
+
   mongoClient:
     container_name: mongoClient
     depends_on:
