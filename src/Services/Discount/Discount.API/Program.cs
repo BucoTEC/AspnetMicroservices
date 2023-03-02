@@ -1,3 +1,4 @@
+using Discount.API;
 using Discount.API.Repositories;
 
 // TODO add static method for initial db migrations and setup, use Npgsql and Dapper for setup
@@ -15,6 +16,8 @@ builder.Services.AddScoped<IDiscountRepository, DiscountRepository>();
 
 
 var app = builder.Build();
+
+Seeder.MigrateDatabase(builder.Configuration, 0);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
