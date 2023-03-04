@@ -4,6 +4,8 @@ using Discount.API.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 
+// MAIN SERVICE FOR THE BIG PROJECT
+
 // Add services to the container.
 
 builder.Services.AddControllers();
