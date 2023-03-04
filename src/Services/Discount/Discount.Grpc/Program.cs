@@ -1,3 +1,4 @@
+using Discount.Grpc;
 using Discount.Grpc.Services;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 
@@ -18,6 +19,9 @@ builder.WebHost.ConfigureKestrel(options =>
 builder.Services.AddGrpc();
 
 var app = builder.Build();
+
+Seeder.MigrateDatabase(builder.Configuration, 0);
+
 
 // Configure the HTTP request pipeline.
 app.MapGrpcService<GreeterService>();
