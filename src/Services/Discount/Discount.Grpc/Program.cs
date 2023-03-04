@@ -1,4 +1,5 @@
 using Discount.Grpc;
+using Discount.Grpc.Repositories;
 using Discount.Grpc.Services;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 
@@ -17,6 +18,8 @@ builder.WebHost.ConfigureKestrel(options =>
 
 // Add services to the container.
 builder.Services.AddGrpc();
+builder.Services.AddScoped<IDiscountRepository, DiscountRepository>();
+
 
 var app = builder.Build();
 
