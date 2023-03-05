@@ -28,11 +28,11 @@ namespace Basket.API.Controllers
             return Ok(basket);
         }
 
-        // TODO look into ProducesResponseType
         [HttpPost]
         [ProducesResponseType(typeof(ShoppingCart), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<ShoppingCart>> UpdateBasket([FromBody] ShoppingCart basket)
         {
+            // TODO connect grpc discount service
             return Ok(await _repository.UpdateBasket(basket));
         }
 
