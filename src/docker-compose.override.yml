@@ -8,7 +8,7 @@ services:
       - "6379:6379"
 
   catalogdb:
-    container_name: basketdb
+    container_name: catalogdb
     restart: always
     ports:
       - "27017:27017"
