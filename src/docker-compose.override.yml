@@ -1,19 +1,19 @@
 version: "3.4"
 
 services:
-  basketdb:
-    container_name: basketdb
-    restart: always
-    ports:
-      - "6379:6379"
-
   catalogdb:
     container_name: catalogdb
     restart: always
     ports:
       - "27017:27017"
     volumes:
-      - mongo_data:/var/lib/postgresql/data/
+      - mongo_data:/data/db
+
+  basketdb:
+    container_name: basketdb
+    restart: always
+    ports:
+      - "6379:6379"
 
   discountdb:
     container_name: discountdb
@@ -25,25 +25,18 @@ services:
     ports:
       - "5433:5432"
     volumes:
-      - postgres_data:/data/db
+      - postgres_data:/var/lib/postgresql/data/
 
   pgadmin:
     container_name: pgadmin
     environment:
-      - PGADMIN_DEFAULT_EMAIL=admin@mail.com
+      - PGADMIN_DEFAULT_EMAIL=admin@aspnetrun.com
       - PGADMIN_DEFAULT_PASSWORD=admin1234
     restart: always
     ports:
       - "5050:80"
     volumes:
       - pgadmin_data:/root/.pgadmin
-
-  mongoClient:
-    container_name: mongoClient
-    depends_on:
-      - catalogdb
-    ports:
-      - "3000:3000"
 
   portainer:
     container_name: portainer
@@ -60,6 +53,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "DatabaseSettings:ConnectionString=mongodb://catalogdb:27017"
+      - "ElasticConfiguration:Uri=http://elasticsearch:9200"
     depends_on:
       - catalogdb
     ports:
@@ -70,7 +64,6 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "CacheSettings:ConnectionString=basketdb:6379"
-      - "GrpcSettings:DiscountUrl=http://discount.grpc"
     depends_on:
       - basketdb
     ports:
@@ -82,6 +75,7 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - "DatabaseSettings:ConnectionString=Server=discountdb;Port=5432;Database=DiscountDb;User
         Id=admin;Password=admin1234;"
+      - "ElasticConfiguration:Uri=http://elasticsearch:9200"
     depends_on:
       - discountdb
     ports:

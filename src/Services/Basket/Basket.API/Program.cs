@@ -1,8 +1,10 @@
 using Basket.API.GrpcServices;
 using Basket.API.Repositories;
 using Discount.Grpc.Protos;
-AppContext.SetSwitch(
-    "System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
+
+// AppContext.SetSwitch(
+//     "System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -17,9 +19,9 @@ builder.Services.AddStackExchangeRedisCache(options => options.Configuration = b
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 
 // Grpc Configuration
-builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>
-    (o => o.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]));
-builder.Services.AddScoped<DiscountGrpcService>();
+// builder.Services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>
+//     (o => o.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]));
+// builder.Services.AddScoped<DiscountGrpcService>();
 
 var app = builder.Build();
 
