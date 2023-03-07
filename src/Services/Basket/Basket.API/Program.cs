@@ -1,7 +1,8 @@
 using Basket.API.GrpcServices;
 using Basket.API.Repositories;
 using Discount.Grpc.Protos;
-
+AppContext.SetSwitch(
+    "System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
