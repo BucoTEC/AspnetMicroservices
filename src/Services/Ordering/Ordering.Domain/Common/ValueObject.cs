@@ -15,6 +15,8 @@ namespace Ordering.Domain.Common
                 return false;
             }
 
+            if(right is null) throw new Exception("Compare values can not be null");
+
             return left?.Equals(right) != false;
         }
 
@@ -25,7 +27,7 @@ namespace Ordering.Domain.Common
 
         protected abstract IEnumerable<object> GetEqualityComponents();
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj == null || obj.GetType() != GetType())
             {
