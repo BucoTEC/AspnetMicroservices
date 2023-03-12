@@ -1,4 +1,5 @@
 using Ordering.Application;
+using Ordering.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +10,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// External dependency injection
 builder.Services.ImplementApplication();
+builder.Services.AddInfrastructureServices();
 
 var app = builder.Build();
 
@@ -28,4 +31,3 @@ app.MapControllers();
 
 app.Run();
 
-// TODO connect proper project references
