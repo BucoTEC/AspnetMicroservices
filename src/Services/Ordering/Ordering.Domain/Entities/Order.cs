@@ -8,6 +8,10 @@ namespace Ordering.Domain.Entities
 {
       public class Order : EntityBase
     {
+        /// <summary>
+        /// This is users name for the specific order
+        /// </summary>
+        /// <value>string</value>
         public string UserName { get; set; } = null!;
         public decimal TotalPrice { get; set; } 
 
@@ -17,14 +21,14 @@ namespace Ordering.Domain.Entities
         public string EmailAddress { get; set; } = null!;
         public string AddressLine { get; set; } = null!;
         public string Country { get; set; } = null!;
-        public string State { get; set; } = null!;
-        public string ZipCode { get; set; } = null!;
+        public string? State { get; set; }
+        public string? ZipCode { get; set; }
 
         // Payment
-        public string CardName { get; set; } = null!;
-        public string CardNumber { get; set; } = null!;
-        public string Expiration { get; set; } = null!;
-        public string CVV { get; set; } = null!;
+        public string? CardName { get; set; } 
+        public string? CardNumber { get; set; }
+        public string? Expiration { get; set; } 
+        public string? CVV { get; set; } 
         public int PaymentMethod { get; set; } 
     }
 }

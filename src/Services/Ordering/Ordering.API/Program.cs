@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 
 // External dependency injection
 builder.Services.ImplementApplication();
-builder.Services.AddInfrastructureServices();
+builder.Services.AddInfrastructureServices(builder.Configuration);
 
 var app = builder.Build();
 
