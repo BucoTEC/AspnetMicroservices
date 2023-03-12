@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Ordering.Domain.Entities;
 
@@ -9,17 +10,14 @@ namespace Ordering.Infrastructure.Persistance
 {
      public class OrderContextSeed
     {
-        public static async Task SeedAsync(OrderContext orderContext, ILogger<OrderContextSeed> logger)
+        public static void Seed(ModelBuilder modelBuilder)
         {
-            if (!orderContext.Orders.Any())
-            {
-                orderContext.Orders.AddRange(GetPreconfiguredOrders());
-                await orderContext.SaveChangesAsync();
-                logger.LogInformation("Seed database associated with context {DbContextName}", typeof(OrderContext).Name);
-            }
+            modelBuilder.Entity<Order>().HasData(
+                GetReconfiguredOrders()
+            );
         }
 
-        private static IEnumerable<Order> GetPreconfiguredOrders()
+        private static IEnumerable<Order> GetReconfiguredOrders()
         {
             return new List<Order>
             {

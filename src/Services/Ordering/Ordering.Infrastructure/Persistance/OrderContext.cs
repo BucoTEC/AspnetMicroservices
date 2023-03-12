@@ -16,6 +16,10 @@ namespace Ordering.Infrastructure.Persistance
 
         public DbSet<Order> Orders { get; set; } = null!;
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            OrderContextSeed.Seed(modelBuilder);
+        }   
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             foreach (var entry in ChangeTracker.Entries<EntityBase>())
