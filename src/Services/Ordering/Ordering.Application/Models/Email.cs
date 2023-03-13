@@ -13,4 +13,3 @@ namespace Ordering.Application.Models
     }
 }
 
-// this is git test
