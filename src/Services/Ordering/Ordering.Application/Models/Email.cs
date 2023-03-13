@@ -12,3 +12,5 @@ namespace Ordering.Application.Models
         public string Body { get; set; } = null!;
     }
 }
+
+// this is git test
