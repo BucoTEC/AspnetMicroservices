@@ -11,4 +11,3 @@ namespace EventBus.Messages.Common
     }
 }
 
-// TODO look up mq setup
