@@ -10,3 +10,5 @@ namespace EventBus.Messages.Common
         public const string BasketCheckoutQueue = "basketcheckout-queue";
     }
 }
+
+// TODO look up mq setup
