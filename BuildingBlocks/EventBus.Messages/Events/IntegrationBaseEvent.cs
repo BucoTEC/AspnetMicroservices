@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+// TODO look up integrations
 namespace EventBus.Messages.Events
 {
     public class IntegrationBaseEvent
