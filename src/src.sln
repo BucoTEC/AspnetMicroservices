@@ -21,8 +21,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ordering", "Ordering", "{73
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.API", "Services\Ordering\Ordering.API\Ordering.API.csproj", "{11CC197A-8C22-46F1-9FE1-80032523C60F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBuss.Messages", "..\BuildingBlocks\EventBus.Messages\EventBuss.Messages.csproj", "{6404B87A-F6AF-4D36-A9D7-849A56283C98}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,10 +46,6 @@ Global
 		{11CC197A-8C22-46F1-9FE1-80032523C60F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11CC197A-8C22-46F1-9FE1-80032523C60F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11CC197A-8C22-46F1-9FE1-80032523C60F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6404B87A-F6AF-4D36-A9D7-849A56283C98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6404B87A-F6AF-4D36-A9D7-849A56283C98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6404B87A-F6AF-4D36-A9D7-849A56283C98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6404B87A-F6AF-4D36-A9D7-849A56283C98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{33726D2A-C8E3-4291-ADC5-7A9197F08FC9} = {9026BE4B-8C59-40E0-8127-CE7866200995}
