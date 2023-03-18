@@ -7,27 +7,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{90
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{33726D2A-C8E3-4291-ADC5-7A9197F08FC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basket.API", "Services\Basket\Basket.API\Basket.API.csproj", "{117CA6BC-4FED-44E7-9BE0-07FA0241EB53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.API", "Services\Basket\Basket.API\Basket.API.csproj", "{117CA6BC-4FED-44E7-9BE0-07FA0241EB53}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{76F7C157-C8EB-4B58-A7A2-3746E503DE0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catalog.API", "Services\Catalog\Catalog.API\Catalog.API.csproj", "{9358E05D-0DE2-4F15-B468-46563389BF75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catalog.API", "Services\Catalog\Catalog.API\Catalog.API.csproj", "{9358E05D-0DE2-4F15-B468-46563389BF75}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{4F8FA5E7-6377-4858-AEC5-8817757F890C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discount.API", "Services\Discount\Discount.API\Discount.API.csproj", "{6120BC49-659F-4CBE-A31E-2923A65E9176}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Discount.API", "Services\Discount\Discount.API\Discount.API.csproj", "{6120BC49-659F-4CBE-A31E-2923A65E9176}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ordering", "Ordering", "{73906320-B3F1-4205-9BEF-839E97C0E212}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering.API", "Services\Ordering\Ordering.API\Ordering.API.csproj", "{11CC197A-8C22-46F1-9FE1-80032523C60F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.API", "Services\Ordering\Ordering.API\Ordering.API.csproj", "{11CC197A-8C22-46F1-9FE1-80032523C60F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBuss.Messages", "..\BuildingBlocks\EventBus.Messages\EventBuss.Messages.csproj", "{EACB21F1-1227-4AA8-8593-B3CF8C648F77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{117CA6BC-4FED-44E7-9BE0-07FA0241EB53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -46,6 +45,13 @@ Global
 		{11CC197A-8C22-46F1-9FE1-80032523C60F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11CC197A-8C22-46F1-9FE1-80032523C60F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11CC197A-8C22-46F1-9FE1-80032523C60F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EACB21F1-1227-4AA8-8593-B3CF8C648F77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EACB21F1-1227-4AA8-8593-B3CF8C648F77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EACB21F1-1227-4AA8-8593-B3CF8C648F77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EACB21F1-1227-4AA8-8593-B3CF8C648F77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{33726D2A-C8E3-4291-ADC5-7A9197F08FC9} = {9026BE4B-8C59-40E0-8127-CE7866200995}
