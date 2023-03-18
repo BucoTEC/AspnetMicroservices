@@ -65,9 +65,9 @@ namespace Basket.API.Controllers
                 return BadRequest();
             }
 
-            // creat bakset chcekout event --> set total price on basket checkout event
+            // Publish the event to a message que
+            // TODO check to wich topic it gets published
             var messageEvent = _mapper.Map<BasketCheckoutEvent>(basketCheckout);
-            // _eventBus.PublishBasketCheckout();
             messageEvent.TotalPrice = basketCheckout.TotalPrice;
             await _publishEndpoint.Publish(messageEvent);
 
