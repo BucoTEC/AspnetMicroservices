@@ -1,5 +1,6 @@
 using Basket.API.Repositories;
 using MassTransit;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,9 @@ builder.Services.AddMassTransit(config => {
 
 // Test to see if it is depractaced
 //builder.Services.AddMassTransitHostedService();
+
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
 
 var app = builder.Build();
 
