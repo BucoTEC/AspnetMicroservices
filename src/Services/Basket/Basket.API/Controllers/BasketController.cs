@@ -7,6 +7,7 @@ using AutoMapper;
 using Basket.API.Entities;
 using Basket.API.Repositories;
 using EventBus.Messages.Events;
+using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Basket.API.Controllers
@@ -17,10 +18,12 @@ namespace Basket.API.Controllers
     {
         private readonly IBasketRepository _repository;
         private readonly IMapper _mapper;
-        public BasketController(IBasketRepository basketRepository, IMapper mapper)
+        private readonly IPublishEndpoint _publishEndpoint;
+        public BasketController(IBasketRepository basketRepository, IMapper mapper, IPublishEndpoint publishEndpoint = null)
         {
             _repository = basketRepository ?? throw new ArgumentNullException(nameof(basketRepository));
             _mapper = mapper;
+            _publishEndpoint = publishEndpoint;
         }
 
 
@@ -65,6 +68,8 @@ namespace Basket.API.Controllers
             // creat bakset chcekout event --> set total price on basket checkout event
             var messageEvent = _mapper.Map<BasketCheckoutEvent>(basketCheckout);
             // _eventBus.PublishBasketCheckout();
+            messageEvent.TotalPrice = basketCheckout.TotalPrice;
+            await _publishEndpoint.Publish(messageEvent);
 
             // clear basket that has been added to cue ( topic )
 
