@@ -45,3 +45,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+// TODO finish que connection
