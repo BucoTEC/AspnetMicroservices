@@ -45,3 +45,5 @@ app.MapControllers();
 
 app.Run();
 
+
+// TODO finish masstrasit connection to rabbitmq
