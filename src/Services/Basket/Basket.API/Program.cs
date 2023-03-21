@@ -23,7 +23,6 @@ builder.Services.AddMassTransit(config => {
     });
 });
 
-// Test to see if it is depractaced
 //builder.Services.AddMassTransitHostedService();
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
