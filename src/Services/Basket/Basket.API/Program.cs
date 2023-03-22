@@ -7,7 +7,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -22,6 +21,10 @@ builder.Services.AddMassTransit(config => {
         cfg.Host(builder.Configuration["EventBusSettings:HostAddress"]);
     });
 });
+// connection of the host location for the event bus uses amqp protocol username:password@servername:portname
+
+
+//legacy mass transit connection for framework 5
 
 //builder.Services.AddMassTransitHostedService();
 

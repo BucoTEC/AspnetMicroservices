@@ -57,7 +57,7 @@ namespace Basket.API.Controllers
         public async Task<IActionResult> Checkout([FromBody] BasketCheckout basketCheckout)
         {
 
-            // get eisting basket with total price
+            // get existing basket with total price
             var basket  = await _repository.GetBasket(basketCheckout.UserName);
 
             if(basket is null)
@@ -66,7 +66,6 @@ namespace Basket.API.Controllers
             }
 
             // Publish the event to a message que
-            // TODO check to wich topic it gets published
             var messageEvent = _mapper.Map<BasketCheckoutEvent>(basketCheckout);
             messageEvent.TotalPrice = basketCheckout.TotalPrice;
             await _publishEndpoint.Publish(messageEvent);
