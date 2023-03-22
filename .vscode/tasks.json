@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/src/Services/Ordering/Ordering.API/Ordering.API.csproj",
+                "${workspaceFolder}/src/Services/Basket/Basket.API/Basket.API.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/src/Services/Ordering/Ordering.API/Ordering.API.csproj",
+                "${workspaceFolder}/src/Services/Basket/Basket.API/Basket.API.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,85 +33,9 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/src/Services/Ordering/Ordering.API/Ordering.API.csproj"
+                "${workspaceFolder}/src/Services/Basket/Basket.API/Basket.API.csproj"
             ],
             "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "clean (functions)",
-            "command": "dotnet",
-            "args": [
-                "clean",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
-            ],
-            "type": "process",
-            "problemMatcher": "$msCompile",
-            "options": {
-                "cwd": "${workspaceFolder}/src\\FirstDunctionApp"
-            }
-        },
-        {
-            "label": "build (functions)",
-            "command": "dotnet",
-            "args": [
-                "build",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
-            ],
-            "type": "process",
-            "dependsOn": "clean (functions)",
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher": "$msCompile",
-            "options": {
-                "cwd": "${workspaceFolder}/src\\FirstDunctionApp"
-            }
-        },
-        {
-            "label": "clean release (functions)",
-            "command": "dotnet",
-            "args": [
-                "clean",
-                "--configuration",
-                "Release",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
-            ],
-            "type": "process",
-            "problemMatcher": "$msCompile",
-            "options": {
-                "cwd": "${workspaceFolder}/src\\FirstDunctionApp"
-            }
-        },
-        {
-            "label": "publish (functions)",
-            "command": "dotnet",
-            "args": [
-                "publish",
-                "--configuration",
-                "Release",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
-            ],
-            "type": "process",
-            "dependsOn": "clean release (functions)",
-            "problemMatcher": "$msCompile",
-            "options": {
-                "cwd": "${workspaceFolder}/src\\FirstDunctionApp"
-            }
-        },
-        {
-            "type": "func",
-            "dependsOn": "build (functions)",
-            "options": {
-                "cwd": "${workspaceFolder}/src\\FirstDunctionApp/bin/Debug/net6.0"
-            },
-            "command": "host start",
-            "isBackground": true,
-            "problemMatcher": "$func-dotnet-watch"
         }
     ]
 }
