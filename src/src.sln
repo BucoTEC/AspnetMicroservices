@@ -21,7 +21,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ordering", "Ordering", "{73
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.API", "Services\Ordering\Ordering.API\Ordering.API.csproj", "{11CC197A-8C22-46F1-9FE1-80032523C60F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBuss.Messages", "..\BuildingBlocks\EventBus.Messages\EventBuss.Messages.csproj", "{EACB21F1-1227-4AA8-8593-B3CF8C648F77}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{8958E37D-6F65-471C-AC68-4ABEF1B6608F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventBuss.Messages", "BuildingBlocks\EventBus.Messages\EventBuss.Messages.csproj", "{6F71DB91-643D-4100-B071-5FB0A7594011}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,10 +47,10 @@ Global
 		{11CC197A-8C22-46F1-9FE1-80032523C60F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11CC197A-8C22-46F1-9FE1-80032523C60F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11CC197A-8C22-46F1-9FE1-80032523C60F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EACB21F1-1227-4AA8-8593-B3CF8C648F77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EACB21F1-1227-4AA8-8593-B3CF8C648F77}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EACB21F1-1227-4AA8-8593-B3CF8C648F77}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EACB21F1-1227-4AA8-8593-B3CF8C648F77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F71DB91-643D-4100-B071-5FB0A7594011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F71DB91-643D-4100-B071-5FB0A7594011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F71DB91-643D-4100-B071-5FB0A7594011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F71DB91-643D-4100-B071-5FB0A7594011}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,5 +64,6 @@ Global
 		{6120BC49-659F-4CBE-A31E-2923A65E9176} = {4F8FA5E7-6377-4858-AEC5-8817757F890C}
 		{73906320-B3F1-4205-9BEF-839E97C0E212} = {9026BE4B-8C59-40E0-8127-CE7866200995}
 		{11CC197A-8C22-46F1-9FE1-80032523C60F} = {73906320-B3F1-4205-9BEF-839E97C0E212}
+		{6F71DB91-643D-4100-B071-5FB0A7594011} = {8958E37D-6F65-471C-AC68-4ABEF1B6608F}
 	EndGlobalSection
 EndGlobal
