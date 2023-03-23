@@ -1,3 +1,4 @@
+using System.Reflection;
 using EventBus.Messages.Common;
 using MassTransit;
 using Ordering.API.EventBusConsumer;
@@ -18,6 +19,12 @@ builder.Services.AddSwaggerGen();
 builder.Services.ImplementApplication();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 
+// auto mapper setup
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+// basket consumer setup
+
+
 // MassTransit-RabbitMQ Configuration
 builder.Services.AddMassTransit(config => {
 
@@ -34,10 +41,12 @@ config.AddConsumer<BasketCheckoutConsumer>();
 });
 // connection of the host location for the event bus uses amqp protocol username:password@servername:portname
 
+builder.Services.AddScoped<BasketCheckoutConsumer>();
 
 //legacy mass transit connection for framework 5
 
 //builder.Services.AddMassTransitHostedService();
+
 
 var app = builder.Build();
 

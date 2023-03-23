@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using EventBus.Messages.Events;
 using MassTransit;
-using MassTransit.Mediator;
+using MediatR;
 using Ordering.Application.Features.Orders.Commands.CheckOutOrder;
 
 namespace Ordering.API.EventBusConsumer
@@ -31,4 +31,3 @@ namespace Ordering.API.EventBusConsumer
         }
     }
 }
-// TODO finish container que receiver
