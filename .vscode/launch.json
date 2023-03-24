@@ -10,9 +10,9 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/src/Services/Basket/Basket.API/bin/Debug/net6.0/Basket.API.dll",
+            "program": "${workspaceFolder}/src/ApiGateways/OcelotApiGw/bin/Debug/net7.0/OcelotApiGw.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/src/Services/Basket/Basket.API",
+            "cwd": "${workspaceFolder}/src/ApiGateways/OcelotApiGw",
             "stopAtEntry": false,
             // Enable launching a web browser when ASP.NET Core starts. For more information: https://aka.ms/VSCode-CS-LaunchJson-WebBrowser
             "serverReadyAction": {
