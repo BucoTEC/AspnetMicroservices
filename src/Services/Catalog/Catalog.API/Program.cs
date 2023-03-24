@@ -29,3 +29,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+// TODO fix mongo db connection on db 
