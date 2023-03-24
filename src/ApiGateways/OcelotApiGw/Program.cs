@@ -8,15 +8,19 @@ builder.Services.AddCors(options => {
 });
 
 // TODO fix configuration loading parameter
-builder.Configuration.AddJsonFile($"ocelot.{builder.Environment}.json", true, true);
+builder.Configuration.AddJsonFile($"ocelot.json", true, true);
 
 builder.Services.AddOcelot(builder.Configuration);
+
 
 var app = builder.Build();
 
 // app.MapGet("/", () => "Hello World!");
 app.UseCors("CORSPolicy");
 
+
+
 await app.UseOcelot();
+
 
 app.Run();
