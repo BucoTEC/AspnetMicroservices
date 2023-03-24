@@ -7,6 +7,7 @@ builder.Services.AddCors(options => {
     options.AddPolicy("CORSPolicy", builder => builder.AllowAnyMethod().AllowAnyHeader().AllowCredentials().SetIsOriginAllowed((hosts) => true));
 });
 
+// TODO fix configuration loading parameter
 builder.Configuration.AddJsonFile($"ocelot.{builder.Environment}.json", true, true);
 
 builder.Services.AddOcelot(builder.Configuration);
